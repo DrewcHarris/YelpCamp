@@ -26,10 +26,11 @@ app.set("view engine", "ejs");
 // Make External Stylesheets Available
 app.use(express.static(__dirname + "/public"));
 
+console.log(process.env.DATABASEURL);
+
 //Connection info for MongoDB
 mongoose.Promise = global.Promise;
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://yelpcampdbuser:yelpcamppassword@ds113063.mlab.com:13063/yelpcamp");
+mongoose.connect(process.env.DATABASEURL);
 
 // Telling express to use body parser
 app.use(bodyParser.urlencoded({extended: true}));
