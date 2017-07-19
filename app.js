@@ -28,7 +28,8 @@ app.use(express.static(__dirname + "/public"));
 
 //Connection info for MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://yelpcampdbuser:yelpcamppassword@ds113063.mlab.com:13063/yelpcamp");
 
 // Telling express to use body parser
 app.use(bodyParser.urlencoded({extended: true}));
